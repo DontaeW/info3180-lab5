@@ -16,7 +16,19 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/movies/create',
+      name: 'AddMovie',
+      component: () => import('../views/AddMovieFormView.vue')
+    },
+    {
+      path: '/movies',        // Add this route [cite: 94]
+      name: 'movies',
+      component: () => import('../views/MoviesView.vue') // Use a dynamic import
     }
+
+
   ]
 })
 
